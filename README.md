@@ -1,5 +1,6 @@
 # Supplementary Materials for **Nucleation thresholds decide the deep-stop question in a two-phase decompression model**
 
+[![DOI](https://zenodo.org/badge/1449338697.svg)](https://doi.org/10.5281/zenodo.24035731)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![MIT License](https://img.shields.io/badge/license-MIT-2ea44f)](LICENSE)
 [![NumPy](https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white)](https://numpy.org/)
