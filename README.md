@@ -1,4 +1,4 @@
-# Deep Stop Paradox
+# Supplementary Materials for **Nucleation thresholds decide the deep-stop question in a two-phase decompression model**
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![MIT License](https://img.shields.io/badge/license-MIT-2ea44f)](LICENSE)
@@ -13,7 +13,7 @@
 
 Supplementary code for the manuscript
 
-> **When deep stops lose: nucleation thresholds and shadow prices in a two-phase model of scuba decompression**
+> **Nucleation thresholds decide the deep-stop question in a two-phase decompression model**
 >
 > Sandy H. S. Herho, Alfita P. Handayani, Faruq Khadami, Iwan P. Anwar, Karina A. Sujatmiko, Rusmawan Suwarman, and Dasapta E. Irawan
 
