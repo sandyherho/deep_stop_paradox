@@ -1,0 +1,128 @@
+deep_stop_paradox: results
+==========================
+
+Reference bubble parameters
+  diffusivity 2e-09 m^2/s, Ostwald 0.015, 2 sigma 0.6 bar um,
+  nucleus radius 2.00 um, nuclei 1 per mm^3, metabolic gas 0.177 bar
+  growth threshold (tension minus ambient) 0.123 bar
+
+1. Verification
+  costate vs central difference: best agreement 3.4e-08 at h = 0.0422 min
+  hazard error at rtol 1e-8: 5.4e-08 (rtol 1e-6: 6.0e-06)
+  nitrogen budget residual, max over compartments: 7.9e-10
+  hazard change over floor widths 0.005-0.1 um: 1.1e-08 (relative)
+
+2. NEDU 170 fsw / 30 min, 174 min total stop time
+  deep-stop skew: shallow 36.5, deep 102.3 bar min
+  hazard ratio deep/shallow, equal weights (beta=0): 1.323
+  hazard ratio at beta=-1.0: 2.884
+  hazard ratio at beta=-0.5: 2.009
+  hazard ratio at beta=+0.5: 0.844
+  hazard ratio at beta=+1.0: 0.542
+  hazard ratio at beta=+2.0: 0.253
+  compartments where deep stops lower Q: 5, 8, 12.5, 18.5, 27, 38.3 min
+  compartments where deep stops raise Q: 54.3, 77, 109, 146, 187, 239, 305 min
+  sign changes of Q_deep - Q_shallow along half-time: 1
+  critical exponent beta_c (equal hazard): 0.312
+  observed incidence ratio 3.23 (95% CI 0.90-11.57)
+  beta matching the observed ratio -1.18 (CI bound -3.81 to below 0.42)
+  peak bubble radius, 12.5 min compartment: shallow 151 um, deep 105 um
+  peak bubble radius, 146 min compartment: shallow 112 um, deep 133 um
+  146 min bubble (shallow) lasts until 805 min after surfacing
+  146 min bubble (deep) lasts until 1307 min after surfacing
+  marginal move of stop time from 10 fsw (one minute):
+    to 70 fsw: beta_c = -0.342
+    to 60 fsw: beta_c = -0.572
+    to 50 fsw: beta_c = -0.668
+    to 40 fsw: beta_c = -0.680
+    to 30 fsw: beta_c = -0.882
+    to 20 fsw: beta_c = -0.938
+  per-minute change of Q_i, 10 -> 70 fsw: fast (<= 38 min) -481.5, slow (> 38 min) 242.3
+
+3. Optimal redistribution of 174 min (stops 100-10 fsw)
+  beta -1.00: H/H_shallow 0.811, H_deep/H_shallow 2.883, skew 20.9, entropy 1.08 bits, first used stop 40 fsw, KKT 3.8e-02
+    stops (fsw:min) 40:2.3 30:1.5 20:58.3 10:111.9
+  beta -0.50: H/H_shallow 0.974, H_deep/H_shallow 2.009, skew 48.2, entropy 1.75 bits, first used stop 40 fsw, KKT 6.4e-02
+    stops (fsw:min) 40:9.0 30:39.2 20:52.0 10:73.8
+  beta +0.00: H/H_shallow 0.912, H_deep/H_shallow 1.323, skew 83.2, entropy 2.11 bits, first used stop 60 fsw, KKT 9.4e-02
+    stops (fsw:min) 60:3.5 50:12.1 40:12.7 30:48.7 20:70.2 10:26.9
+  beta +0.25: H/H_shallow 0.821, H_deep/H_shallow 1.058, skew 94.7, entropy 2.19 bits, first used stop 60 fsw, KKT 4.4e-02
+    stops (fsw:min) 60:7.0 50:10.4 40:27.4 30:38.3 20:73.5 10:17.4
+  beta +0.50: H/H_shallow 0.613, H_deep/H_shallow 0.844, skew 116.0, entropy 2.12 bits, first used stop 60 fsw, KKT 1.1e-01
+    stops (fsw:min) 60:15.5 50:9.0 40:33.8 30:50.4 20:63.0 10:2.4
+  beta +0.75: H/H_shallow 0.453, H_deep/H_shallow 0.674, skew 122.4, entropy 2.40 bits, first used stop 80 fsw, KKT 4.4e-02
+    stops (fsw:min) 80:1.2 60:19.2 50:14.9 40:29.2 30:47.6 20:52.0 10:9.8
+  beta +1.00: H/H_shallow 0.344, H_deep/H_shallow 0.542, skew 129.0, entropy 2.43 bits, first used stop 80 fsw, KKT 5.6e-01
+    stops (fsw:min) 80:2.0 60:17.4 50:17.4 40:33.4 30:55.7 20:38.7 10:9.4
+  beta +1.50: H/H_shallow 0.198, H_deep/H_shallow 0.362, skew 145.8, entropy 2.70 bits, first used stop 80 fsw, KKT 2.3e-02
+    stops (fsw:min) 80:10.0 70:9.0 60:11.5 50:20.1 40:39.4 30:22.0 20:52.0 10:10.1
+  beta +2.00: H/H_shallow 0.108, H_deep/H_shallow 0.253, skew 152.2, entropy 2.87 bits, first used stop 100 fsw, KKT 1.0e+00
+    stops (fsw:min) 100:2.2 90:3.9 70:17.4 60:17.1 50:15.5 40:27.4 30:38.3 20:34.8 10:17.4
+  straight path shallow -> deep: best theta jumps at beta = 0.23 (0.10 -> 0.72), 0.68 (0.77 -> 1.13), 0.69 (1.13 -> 1.33)
+  path, beta +0.0: best theta 0.10, hazard 0.970 of shallow
+  path, beta +0.5: best theta 0.77, hazard 0.793 of shallow
+  path, beta +1.0: best theta 1.33, hazard 0.494 of shallow
+  beta -1.00: optimum / NEDU deep hazard 0.281
+  beta -0.50: optimum / NEDU deep hazard 0.485
+  beta +0.00: optimum / NEDU deep hazard 0.689
+  beta +0.25: optimum / NEDU deep hazard 0.776
+  beta +0.50: optimum / NEDU deep hazard 0.727
+  beta +0.75: optimum / NEDU deep hazard 0.672
+  beta +1.00: optimum / NEDU deep hazard 0.634
+  beta +1.50: optimum / NEDU deep hazard 0.547
+  beta +2.00: optimum / NEDU deep hazard 0.425
+  beta -1.00: optima from starts shallow/deep/uniform: 0.990/0.996/0.811; spread 22.7%; best from uniform
+  beta -0.50: optima from starts shallow/deep/uniform: 0.974/0.980/0.982; spread 0.8%; best from shallow
+  beta +0.00: optima from starts shallow/deep/uniform: 0.937/0.912/0.916; spread 2.8%; best from deep
+  beta +0.25: optima from starts shallow/deep/uniform: 0.911/0.877/0.821; spread 11.0%; best from uniform
+  beta +0.50: optima from starts shallow/deep/uniform: 0.613/0.743/0.617; spread 21.2%; best from shallow
+  beta +0.75: optima from starts shallow/deep/uniform: 0.453/0.454/0.471; spread 3.9%; best from shallow
+  beta +1.00: optima from starts shallow/deep/uniform: 0.361/0.348/0.344; spread 4.9%; best from uniform
+  beta +1.50: optima from starts shallow/deep/uniform: 0.198/0.256/0.203; spread 29.5%; best from shallow
+  beta +2.00: optima from starts shallow/deep/uniform: 0.128/0.141/0.108; spread 30.6%; best from uniform
+  (local optima: exchange-stationary to 0.125 min; the hazard is piecewise smooth, so marginal hazards are not equal at kinks)
+
+4. Air dives, GF 90/85 reference (beta_c above which a deep stop lowers hazard)
+  24 m: 10 min +0.87/+3.56  15 min +0.21/+1.09  20 min -0.01/+0.57  30 min -0.21/+0.17  40 min -0.39/-0.09  50 min -0.50/-0.18
+  30 m: 10 min +0.83/+2.35  15 min +0.34/+0.82  20 min +0.10/+0.40  30 min -0.26/+0.04  40 min -0.34/-0.06  50 min -0.32/-0.12
+  36 m: 10 min +0.80/+1.90  15 min +0.26/+0.61  20 min +0.04/+0.32  30 min -0.23/+0.02  40 min -0.25/+0.17  50 min -0.31/+0.08
+  42 m: 10 min +0.81/+1.66  15 min +0.28/+0.52  20 min +0.09/+0.30  30 min -0.12/+0.27  40 min -0.19/+0.18  50 min -0.21/+0.39
+  48 m: 10 min +0.77/+1.45  15 min +0.25/+0.56  20 min +0.08/+0.49  30 min -0.05/+0.30  40 min -0.09/+0.39  50 min -0.11/+0.35
+  54 m: 10 min +0.76/+1.31  15 min +0.30/+0.80  20 min +0.15/+0.53  30 min -0.00/+0.48  40 min -0.00/+0.44  50 min -0.08/+0.63
+  60 m: 10 min +0.74/+1.22  15 min +0.30/+0.73  20 min +0.16/+0.51  30 min +0.06/+0.48  40 min +0.05/+0.62  50 min -0.08/+0.56
+  (half-depth stop / Pyle stop); max sign changes 1
+  half-depth stop helps at equal weights in 20 of 42 dives
+  Pyle stop helps at equal weights in 4 of 42 dives
+  no-decompression dives (3 min safety stop only): 9; half-depth beta_c range -0.21 to 0.87
+
+5. Gradient-factor low, GF-high 85
+  nedu beta -0.5: lowest hazard at GF-low 60 (TST 81 min); GF-low 10 vs 85 hazard ratio 1.087
+  nedu beta +0.0: lowest hazard at GF-low 60 (TST 81 min); GF-low 10 vs 85 hazard ratio 0.951
+  nedu beta +0.5: lowest hazard at GF-low 10 (TST 91 min); GF-low 10 vs 85 hazard ratio 0.840
+  nedu beta +1.0: lowest hazard at GF-low 10 (TST 91 min); GF-low 10 vs 85 hazard ratio 0.751
+  nedu TST at GF-low 10..85: 91, 90, 86, 85, 82, 81, 77, 74, 73
+  tech45 beta -0.5: lowest hazard at GF-low 40 (TST 41 min); GF-low 10 vs 85 hazard ratio 0.979
+  tech45 beta +0.0: lowest hazard at GF-low 40 (TST 41 min); GF-low 10 vs 85 hazard ratio 0.927
+  tech45 beta +0.5: lowest hazard at GF-low 20 (TST 42 min); GF-low 10 vs 85 hazard ratio 0.877
+  tech45 beta +1.0: lowest hazard at GF-low 20 (TST 42 min); GF-low 10 vs 85 hazard ratio 0.831
+  tech45 TST at GF-low 10..85: 42, 42, 41, 41, 39, 38, 37, 35, 35
+
+6. Sensitivity (128 Latin hypercube samples)
+  deep worse than shallow at beta=0 in 92 of 128 samples
+  ratio at beta=0: median 1.18, range 0.02-1.76
+  beta_c: median 0.19, 5-95% -1.78 to 0.48; one crossing in 118 samples, none in 10
+  rank correlation of beta_c with diffusivity D: -0.30
+  rank correlation of beta_c with solubility lambda: -0.18
+  rank correlation of beta_c with surface tension: -0.20
+  rank correlation of beta_c with nucleus radius r0: +0.34
+  rank correlation of beta_c with nucleus density N: -0.54
+  rank correlation of beta_c with metabolic gas p_m: -0.32
+
+7. Growth threshold (2 sigma / r0 - p_m), NEDU pair
+  varying nucleus radius: ratio at beta=0 is 1.18-1.35 for thresholds <= 0.25 bar; last crossing of 1 at about 0.31 bar; 0.36 at 0.40 bar
+  varying surface tension: ratio at beta=0 is 1.18-1.34 for thresholds <= 0.25 bar; last crossing of 1 at about 0.31 bar; 0.35 at 0.40 bar
+  radius and surface-tension routes agree to 2.2% for thresholds <= 0.425 bar (21% above, where both ratios are below 0.05)
+  beta_c for thresholds <= 0.25 bar: 0.21 to 0.31
+  samples with threshold in (-0.11, 0.25] bar: 90, deep worse in 78, median ratio 1.22
+  samples with threshold in (0.25, 0.35] bar: 18, deep worse in 13, median ratio 1.08
+  samples with threshold in (0.35, 0.79] bar: 20, deep worse in 1, median ratio 0.15

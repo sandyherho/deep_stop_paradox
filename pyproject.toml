@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deep_stop_paradox"
+version = "0.1.0"
+description = "Optimal distribution of decompression stop time in a two-phase bubble model, and why deep stops can lose"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [
+    { name = "Sandy H. S. Herho", email = "sandyherho@itb.ac.id" },
+    { name = "Alfita P. Handayani" },
+    { name = "Faruq Khadami" },
+    { name = "Iwan P. Anwar", email = "iwanpanwar@itb.ac.id" },
+    { name = "Karina A. Sujatmiko" },
+    { name = "Rusmawan Suwarman", email = "rusmawan@itb.ac.id" },
+    { name = "Dasapta E. Irawan", email = "dasaptaerwin@itb.ac.id" },
+]
+dependencies = ["numpy>=1.24", "scipy>=1.10", "matplotlib>=3.7",
+                "pillow>=9"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+
+[tool.setuptools]
+packages = ["deep_stop_paradox"]

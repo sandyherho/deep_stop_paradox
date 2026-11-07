@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+title: "deep_stop_paradox: optimal distribution of decompression stop time in a two-phase bubble model of scuba diving"
+type: software
+license: MIT
+version: 0.1.0
+date-released: 2026-11-05
+repository-code: "https://github.com/sandyherho/deep_stop_paradox"
+keywords:
+  - scuba diving
+  - decompression
+  - deep stops
+  - bubble dynamics
+  - optimal control
+  - adjoint sensitivity
+authors:
+  - family-names: Herho
+    given-names: Sandy H. S.
+    affiliation: "Applied Geology Research Group, Bandung Institute of Technology"
+    email: sandyherho@itb.ac.id
+  - family-names: Handayani
+    given-names: Alfita P.
+    affiliation: "Center for Agrarian Studies, and Spatial Systems and Cadaster Research Group, Bandung Institute of Technology"
+  - family-names: Khadami
+    given-names: Faruq
+  - family-names: Anwar
+    given-names: Iwan P.
+    email: iwanpanwar@itb.ac.id
+  - family-names: Sujatmiko
+    given-names: Karina A.
+    affiliation: "Applied and Environmental Oceanography Research Group, Bandung Institute of Technology"
+  - family-names: Suwarman
+    given-names: Rusmawan
+    email: rusmawan@itb.ac.id
+  - family-names: Irawan
+    given-names: Dasapta E.
+    affiliation: "Applied Geology Research Group, Bandung Institute of Technology"
+    email: dasaptaerwin@itb.ac.id
